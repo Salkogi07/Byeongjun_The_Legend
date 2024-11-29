@@ -5843,12 +5843,12 @@ MonoBehaviour:
   jumpBufferTime: 0.13
   isGrounded: 0
   groundCheckDistance: 0.1
-  groundCheck: {fileID: 0}
+  groundCheck: {fileID: 1417837812}
   groundCheckSize: {x: 0.3, y: 0.1}
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
-  dust: {fileID: 0}
+  dust: {fileID: 726637098}
   isPlatform: 0
   isJumping: 0
   isFacingRight: 0
