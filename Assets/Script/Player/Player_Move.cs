@@ -1,8 +1,6 @@
 using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.EventSystems;
-using UnityEngine.UI;
 
 public class Player_Move : MonoBehaviour
 {
@@ -156,9 +154,9 @@ public class Player_Move : MonoBehaviour
             doubleJumpAvailable = false; // ���� ���� ��� �Ŀ��� ���� ���� �Ұ�
         }
 
-        if (isJumpCut && Input.GetButtonUp("Jump") && rb.linearVelocity.y > 0f)
+        if (isJumpCut && Input.GetButtonUp("Jump") && rb.linearVelocityY > 0f)
         {
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y * 0.5f);
+            rb.linearVelocity = new Vector2(rb.linearVelocityX, rb.linearVelocityY * 0.5f);
             coyoteTimeCounter = 0f;
             isJumpCut = false;
         }
@@ -166,7 +164,7 @@ public class Player_Move : MonoBehaviour
 
     private void PerformJump()
     {
-        rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+        rb.linearVelocity = new Vector2(rb.linearVelocityX, jumpForce);
         jumpBufferCounter = 0f;
         StartCoroutine(JumpCooldown());
     }
@@ -207,11 +205,11 @@ public class Player_Move : MonoBehaviour
         {
             animator.PlayAnimation("Attack");
         }
-        else if (!isGrounded && rb.linearVelocity.y < 0)
+        else if (!isGrounded && rb.linearVelocityY < 0)
         {
             animator.PlayAnimation("Fall");
         }
-        else if (!isGrounded && rb.linearVelocity.y > 0)
+        else if (!isGrounded && rb.linearVelocityY > 0)
         {
             animator.PlayAnimation("Jump");
         }
@@ -228,7 +226,6 @@ public class Player_Move : MonoBehaviour
 
     void OnDrawGizmos()
     {
-        // �ٴ� üũ ���� ǥ��
         Gizmos.color = Color.green;
         Gizmos.DrawWireCube(groundCheck.position, groundCheckSize);
     }
