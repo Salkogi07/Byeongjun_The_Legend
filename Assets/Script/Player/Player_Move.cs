@@ -5,8 +5,8 @@ using UnityEngine;
 public class Player_Move : MonoBehaviour
 {
     [Header("Player Info")]
-    [SerializeField] public float moveSpeed = 5f; // �̵� �ӵ�
-    [SerializeField] public float jumpForce = 10f; // ���� ��
+    [SerializeField] public float moveSpeed = 5f;
+    [SerializeField] public float jumpForce = 10f;
 
     [SerializeField] public float coyoteTime = 0.2f;
     [SerializeField] public float jumpBufferTime = 0.2f;
@@ -14,11 +14,11 @@ public class Player_Move : MonoBehaviour
     private float gravityScale = 3.5f;
 
     [Header("Ground Check")]
-    [SerializeField] private bool isGrounded; // �ٴڿ� �ִ��� ����
+    [SerializeField] private bool isGrounded;
     [SerializeField] public float groundCheckDistance;
-    [SerializeField] public Transform groundCheck; // �ٴ� üũ ��ġ
-    [SerializeField] public Vector2 groundCheckSize = new Vector2(1f, 0.1f); // �ٴ� üũ �ڽ� ũ��
-    [SerializeField] public LayerMask groundLayer; // �ٴ� ���̾� ����ũ
+    [SerializeField] public Transform groundCheck;
+    [SerializeField] public Vector2 groundCheckSize = new Vector2(1f, 0.1f);
+    [SerializeField] public LayerMask groundLayer;
 
     [Header("Component")]
     public ParticleSystem dust;
@@ -28,8 +28,8 @@ public class Player_Move : MonoBehaviour
 
     [Header("IsAtcitoning")]
     [SerializeField] public bool isPlatform = false;
-    [SerializeField] private bool isJumping; // ���� ������ ����
-    [SerializeField] public bool isFacingRight = false; // �÷��̾ �������� ���� �ִ��� ����
+    [SerializeField] private bool isJumping;
+    [SerializeField] public bool isFacingRight = false;
 
     private int facingDir;
     private int moveInput = 0;
@@ -41,10 +41,9 @@ public class Player_Move : MonoBehaviour
     public bool isAttack = false;
     private bool isJumpCut = false;
 
-    // �߰��� ������
     [Header("Double Jump")]
-    [SerializeField] private bool canDoubleJump = true; // ���� ���� ����� �Ѱ� ���� ����
-    private bool doubleJumpAvailable = false; // ���� ���� ���� ����
+    [SerializeField] private bool canDoubleJump = true;
+    private bool doubleJumpAvailable = false;
 
     void Awake()
     {
@@ -62,14 +61,11 @@ public class Player_Move : MonoBehaviour
             return;
         }
 
-        // �¿� �̵�
         MoveInput();
         Jump();
 
-        // ĳ���� ���� ����
         Flip();
 
-        // �ٴ� üũ
         GroundCheck();
     }
 
@@ -99,20 +95,19 @@ public class Player_Move : MonoBehaviour
                 CreateDust();
 
             isFacingRight = !isFacingRight;
-            spriteRenderer.flipX = !spriteRenderer.flipX;  // ��������Ʈ�� x���� ������
+            spriteRenderer.flipX = !spriteRenderer.flipX;
         }
     }
 
     public void FlipAttack(int directionX)
     {
-        // ĳ������ ������ �ٲٴ� ����
         if (isFacingRight && directionX < 0 || !isFacingRight && directionX > 0)
         {
-            if (isGrounded)  // ĳ���Ͱ� ���� ���� ���� ���� ����
+            if (isGrounded)
                 CreateDust();
 
             isFacingRight = !isFacingRight;
-            spriteRenderer.flipX = !spriteRenderer.flipX;  // ��������Ʈ�� x���� ������
+            spriteRenderer.flipX = !spriteRenderer.flipX;
         }
     }
 
@@ -122,7 +117,7 @@ public class Player_Move : MonoBehaviour
         if (isGrounded)
         {
             coyoteTimeCounter = coyoteTime;
-            doubleJumpAvailable = true; // �ٴڿ� ������ ���� ���� ����
+            doubleJumpAvailable = true;
         }
         else
         {
@@ -151,7 +146,7 @@ public class Player_Move : MonoBehaviour
         {
             PerformJump();
             isJumpCut = true;
-            doubleJumpAvailable = false; // ���� ���� ��� �Ŀ��� ���� ���� �Ұ�
+            doubleJumpAvailable = false;
         }
 
         if (isJumpCut && Input.GetButtonUp("Jump") && rb.linearVelocityY > 0f)
