@@ -426,7 +426,7 @@ GameObject:
   - component: {fileID: 238572040}
   - component: {fileID: 238572039}
   m_Layer: 3
-  m_Name: Grid
+  m_Name: Grid_Ground
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1672,7 +1672,7 @@ GameObject:
   - component: {fileID: 1136568126}
   - component: {fileID: 1136568125}
   m_Layer: 0
-  m_Name: Grid
+  m_Name: Grid_Grass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
