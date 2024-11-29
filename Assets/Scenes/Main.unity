@@ -5602,7 +5602,7 @@ GameObject:
   - component: {fileID: 1469919645}
   - component: {fileID: 1469919644}
   - component: {fileID: 1469919643}
-  - component: {fileID: 1469919642}
+  - component: {fileID: 1469919647}
   - component: {fileID: 1469919640}
   m_Layer: 6
   m_Name: Player
@@ -5627,36 +5627,6 @@ MonoBehaviour:
   dashingPower: 24
   dashingTime: 0.2
   dashingCooldown: 0.8
---- !u!114 &1469919642
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1469919634}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb01110c3ce0c444ebc16e378b53168a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 10
-  jumpForce: 16
-  coyoteTime: 0.13
-  jumpBufferTime: 0.13
-  isGrounded: 0
-  groundCheckDistance: 0.1
-  groundCheck: {fileID: 1417837812}
-  groundCheckSize: {x: 0.3, y: 0.1}
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 8
-  dust: {fileID: 726637098}
-  isPlatform: 0
-  isJumping: 0
-  isFacingRight: 0
-  isDashing: 0
-  isAttack: 0
-  canDoubleJump: 1
 --- !u!96 &1469919643
 TrailRenderer:
   serializedVersion: 3
@@ -5855,6 +5825,36 @@ Transform:
   - {fileID: 726637100}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1469919647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1469919634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f05d9d8404e4c6042ae1091176fc95be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 10
+  jumpForce: 16
+  coyoteTime: 0.13
+  jumpBufferTime: 0.13
+  isGrounded: 0
+  groundCheckDistance: 0.1
+  groundCheck: {fileID: 0}
+  groundCheckSize: {x: 0.3, y: 0.1}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 8
+  dust: {fileID: 0}
+  isPlatform: 0
+  isJumping: 0
+  isFacingRight: 0
+  isDashing: 0
+  isAttack: 0
+  canDoubleJump: 1
 --- !u!1 &1812571952
 GameObject:
   m_ObjectHideFlags: 0

@@ -26,7 +26,7 @@ public class Player_Move : MonoBehaviour
     public ParticleSystem dust;
     private SpriteRenderer spriteRenderer;
     public Rigidbody2D rb { get; private set; }
-    private PlayerSkill playerSkill;
+    private Player_Skill playerSkill;
 
     [Header("IsAtcitoning")]
     [SerializeField] public bool isPlatform = false;
@@ -51,7 +51,7 @@ public class Player_Move : MonoBehaviour
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        playerSkill = GetComponent<PlayerSkill>();
+        playerSkill = GetComponent<Player_Skill>();
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
 
         gravityScale = rb.gravityScale;
